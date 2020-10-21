@@ -1,0 +1,39 @@
+<h1 class="text-center my-3">Add Category</h1>
+<hr />
+<div
+  *ngIf="this.alert == true"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+>
+  Category Added Successfully!
+  <button
+    type="button"
+    (click)="close()"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="addCategory" (submit)="category()">
+  <div class="form-group">
+    <label>Category Name </label>
+    <input
+      class="form-control admininput w-75"
+      formControlName="categoryname"
+      type="text"
+    />
+  </div>
+  <div class="form-group">
+    <label>Image </label>
+    <input
+      id="immg"
+      class="admininput w-75"
+      formControlName="image"
+      (change)="img($event)"
+      type="file"
+    />
+  </div>
+  <button class="btn btn-secondary">Submit</button>
+</form>

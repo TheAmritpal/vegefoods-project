@@ -1,0 +1,51 @@
+<h2 class="text-center my-3">Edit Product</h2>
+<hr />
+<form [formGroup]="editProduct" (submit)="edit()">
+  <div class="form-group">
+    <label>Product Title</label>
+    <input
+      class="form-control admininput w-75"
+      formControlName="product"
+      type="text"
+    />
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input
+      class="form-control admininput w-75"
+      formControlName="price"
+      type="text"
+    />
+  </div>
+  <div class="form-group">
+    <label>Category</label>
+    <select class="form-control admininput w-75" formControlName="categoryid">
+      <option
+        *ngFor="let cate of category"
+        value="{{ cate.id }}"
+        selected="{{ this.gotProd[0].categoryid }}"
+      >
+        {{ cate.categoryname }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input
+      class="form-control admininput w-75"
+      formControlName="description"
+      type="text"
+    />
+  </div>
+  <div class="form-group">
+    <label>Upload Image</label>
+    <input
+      class="admininput"
+      formControlName="image"
+      (change)="imageChange($event)"
+      type="file"
+      id="immg"
+    />
+  </div>
+  <button class="btn btn-dark" type="sumit">Edit Product</button>
+</form>

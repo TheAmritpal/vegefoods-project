@@ -1,0 +1,16 @@
+<h1>Showing Details of Order id {{ id }}</h1>
+<table class="table">
+  <thead>
+    <th>Sr.No</th>
+    <th>Product</th>
+    <th>Quantity</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let detail of orderDetails; let i = index">
+      <td>{{ 1 + i }}</td>
+      <td>{{ detail.product }}</td>
+      <td>{{ detail.quantity }}</td>
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-secondary" (click)="back()">Go Back!</button>

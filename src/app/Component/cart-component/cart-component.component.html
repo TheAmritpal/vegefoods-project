@@ -1,0 +1,115 @@
+<section class="section1">
+  <div
+    class="bgimg d-table"
+    style="background-image: url(../../assets/images/bg_1.jpg)"
+  >
+    <div
+      class="bgimgtext d-table-cell align-middle text-center pt-5"
+      data-aos="fade-up"
+      data-aos-duration="700"
+    >
+      <p class="breadcrumbs text-uppercase bread">
+        <span><a routerLink="/home">products </a> </span> <span>cart</span>
+      </p>
+      <h3 class="font-weight-bold">Cart</h3>
+    </div>
+  </div>
+</section>
+<div class="cart mt-5">
+  <div class="container taa">
+    <table class="table table-striped">
+      <thead>
+        <th>Sr No</th>
+        <th class="cartproduct">Product</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th id="tot">Total</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <tr class="tbrw" *ngFor="let cart of carts; let i = index">
+          <td>{{ 1 + i }}</td>
+          <td>{{ cart.product }}</td>
+          <td>
+            <img
+              height="200"
+              width="200"
+              class="img img-fluid"
+              src="http://localhost/amrit/laravel/laravelapi/public/uploads/{{
+                cart.image
+              }}"
+              alt="img"
+            />
+          </td>
+          <td>
+            $<span class="pri">{{ cart.price }}</span>
+          </td>
+          <td>
+            <!-- <input class="quant" type="number" required /> -->
+            <select
+              (change)="quantityChange($event)"
+              name="quantity"
+              class="quant"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="5">5</option>
+            </select>
+          </td>
+          <td class="tot">
+            $<span class="tott">{{ cart.price }}</span>
+          </td>
+          <td>
+            <button (click)="remCart(cart.id)" class="btn" type="button">
+              <fa-icon class="text-danger" [icon]="faMinusCircle"></fa-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot class="tfoot">
+        <tr>
+          <td></td>
+          <td></td>
+          <td><p *ngIf="cartempty">Cart Empty!</p></td>
+          <td></td>
+          <td>Grand Total</td>
+          <td class="grndTot"></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="text-right">
+      <button (click)="empty()" class="btn btn-primary mx-1">Empty</button>
+      <button class="btn btn-primary text-white mx-1">Continue Shopping</button>
+    </div>
+    <div class="text-right my-5">
+      <button (click)="checkout()" class="btn btn-warning mx-1">
+        Checkout!
+      </button>
+    </div>
+  </div>
+</div>
+<section class="content8 bg-light">
+  <div class="container">
+    <div class="row icopos">
+      <div class="col-lg-6 newsleft my-5">
+        <p class="h4">Subcribe to our Newsletter</p>
+        <p class="text-muted bio">
+          Get e-mail updates about our latest shops and special offers
+        </p>
+      </div>
+      <div class="col-lg-6 formright my-5">
+        <div class="form-group d-flex">
+          <input
+            class="form-control input-lg"
+            type="text"
+            placeholder="   Enter email address"
+          />
+          <a class="btn text-white input2">Subcribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer-component></app-footer-component>

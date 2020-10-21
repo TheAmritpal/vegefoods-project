@@ -1,0 +1,126 @@
+<nav class="nav1">
+  <div class="container">
+    <div class="row nav1row">
+      <div class="col-lg-4 col-md-12 text-uppercase text-white">
+        <span><fa-icon [icon]="faPhone"></fa-icon> +91-9664545072</span>
+      </div>
+      <div class="col-lg-4 col-md-12 text-uppercase text-white">
+        <span>
+          <fa-icon [icon]="faPaperPlane"></fa-icon>
+          trycatchclasses@gmail.com</span
+        >
+      </div>
+      <div class="col-lg-4 col-md-12 text-uppercase text-white">
+        <span>3-5 bussiness days delivery & free returns</span>
+      </div>
+    </div>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-sm bg-light nav2">
+  <div class="container">
+    <a
+      routerLink="/home"
+      class="navbar-brand text-uppercase font-weight-bold navbrand"
+      >vegefoods</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarcollapse"
+    >
+      <fa-icon [icon]="faBars"></fa-icon>
+      menu
+    </button>
+    <div class="collapse navbar-collapse" id="navbarcollapse">
+      <ul class="navbar-nav ml-auto nav2ul">
+        <li class="nav-item active px-3">
+          <a routerLink="/home" class="nav-link act text-uppercase">home</a>
+        </li>
+        <li ngbDropdown class="nav-item active px-2 dropdown">
+          <a
+            class="nav-link text-uppercase"
+            id="dropdownBasic1"
+            ngbDropdownToggle
+            style="cursor: pointer"
+            id="navbarDropdown1"
+            role="button"
+          >
+            Shop
+          </a>
+          <div
+            ngbDropdownMenu
+            aria-labelledby="navbarDropdown1"
+            class="dropdown-menu"
+          >
+            <a
+              ngbDropdownItem
+              routerLink="/shop"
+              (click)="$event.preventDefault()"
+              >Shop</a
+            >
+            <a
+              ngbDropdownItem
+              routerLink="/product"
+              (click)="$event.preventDefault()"
+              >Products</a
+            >
+          </div>
+        </li>
+        <li class="nav-item px-3">
+          <a routerLink="/about" class="nav-link text-uppercase">about</a>
+        </li>
+        <li class="nav-item px-3">
+          <a routerLink="/blog" class="nav-link text-uppercase">blog</a>
+        </li>
+        <li class="nav-item px-3">
+          <a routerLink="/cart" class="nav-link"
+            ><fa-icon [icon]="faShoppingCart"></fa-icon>
+            <p *ngIf="show" class="d-inline ml-1">
+              {{ this.cartlength }}
+            </p></a
+          >
+        </li>
+        <li ngbDropdown class="nav-item active px-2 dropdown">
+          <a
+            class="nav-link text-uppercase"
+            id="dropdownBasic2"
+            ngbDropdownToggle
+            style="cursor: pointer"
+            role="button"
+          >
+            Account
+          </a>
+          <div
+            ngbDropdownMenu
+            aria-labelledby="dropdownBasic2"
+            class="dropdown-menu"
+          >
+            <a
+              *ngIf="this.post.isLogin == false"
+              ngbDropdownItem
+              routerLink="/login"
+              (click)="$event.preventDefault()"
+              >Login</a
+            >
+            <a
+              *ngIf="this.post.isLogin == false"
+              ngbDropdownItem
+              routerLink="/register"
+              (click)="$event.preventDefault()"
+              >Register</a
+            >
+            <a
+              *ngIf="this.post.isLogin == true"
+              ngbDropdownItem
+              routerLink="/logout"
+              (click)="$event.preventDefault()"
+              >Logout</a
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

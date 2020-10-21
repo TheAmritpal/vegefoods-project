@@ -1,0 +1,42 @@
+<div class="login_out row">
+  <div class="login_div col-5"></div>
+  <div class="col-5 text-center py-5">
+    <h2 class="mt-5">Login</h2>
+    <form [formGroup]="signInForm" (submit)="signin(signInForm.value)">
+      <div class="form-group">
+        <label>Email:</label>
+        <input
+          class="form-control"
+          class="my-5"
+          type="email"
+          email
+          required
+          formControlName="email"
+        />
+      </div>
+      <div class="form-group">
+        <label>Password:</label>
+        <input
+          class="form-control"
+          class="my-5"
+          type="password"
+          autocomplete="off"
+          password
+          required
+          formControlName="password"
+        />
+      </div>
+      <button
+        [disabled]="!signInForm.valid"
+        class="btn btn-warning"
+        type="submit"
+      >
+        Login!
+      </button>
+    </form>
+    <h2 class="mt-4">New User?</h2>
+    <h5>
+      <a routerLink="/register" class="text-danger">Create an Account!</a>
+    </h5>
+  </div>
+</div>

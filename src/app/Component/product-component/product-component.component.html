@@ -1,0 +1,60 @@
+<section class="section1">
+  <div
+    class="bgimg d-table"
+    style="background-image: url(../../assets/images/bg_1.jpg)"
+  >
+    <div
+      class="bgimgtext d-table-cell align-middle text-center pt-5"
+      data-aos="fade-up"
+      data-aos-duration="700"
+    >
+      <p class="breadcrumbs text-uppercase bread">
+        <span><a routerLink="/home">Home </a> </span> <span>Products</span>
+      </p>
+      <h3 class="font-weight-bold">Products</h3>
+    </div>
+  </div>
+</section>
+<section class="content4 my-5">
+  <div class="container">
+    <div class="topcontent text-center">
+      <h1 class="text-capitalize font-weight-bold">our products</h1>
+      <p>
+        Far far away, behind the word mountains, far from the countries Vokalia
+        and Consonantia
+      </p>
+    </div>
+    <div class="row my-5">
+      <div *ngFor="let prod of product" class="col-md-3 col-sm-12">
+        <div class="mx-1 my-3">
+          <div (click)="prodDetails(prod.id)" class="products text-center">
+            <div class="productsimg">
+              <img
+                class="img img-fluid"
+                src="http://localhost/amrit/laravel/laravelapi/public/uploads/{{
+                  prod.image
+                }}"
+                alt="img"
+              />
+            </div>
+            <div class="lowerdiv">
+              <div class="productstext mb-4">
+                <p class="text-uppercase">{{ prod.product }}</p>
+                <div class="opacity">
+                  <s class="text-muted">$500</s>
+                  <span> ${{ prod.price }}</span>
+                </div>
+              </div>
+              <div class="icondiv text-center">
+                <fa-icon class="iicon" [icon]="faBars"></fa-icon>
+                <fa-icon class="iicon" [icon]="faShoppingCart"></fa-icon>
+                <fa-icon class="iicon" [icon]="faHeart"></fa-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer-component></app-footer-component>

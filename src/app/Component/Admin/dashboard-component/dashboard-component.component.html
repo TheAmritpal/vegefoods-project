@@ -1,0 +1,52 @@
+<div class="container-fluid admincontainer">
+  <div class="row">
+    <div class="col-lg-2 sidebar">
+      <div class="sidebar">
+        <ul class="side">
+          <li class="my-3 text-center">
+            <h3 class="adminbrand">Vegefoods Admin</h3>
+          </li>
+          <li class="my-3">
+            <a class="pl-4 h5 text-white" routerLink="dashboard">Dashboard</a>
+          </li>
+          <li class="my-3">
+            <a class="pl-4 h5 text-white" routerLink="addcategory"
+              >Add Category</a
+            >
+          </li>
+          <li class="my-3">
+            <a class="pl-4 h5 text-white" routerLink="viewcategory"
+              >View Category</a
+            >
+          </li>
+          <li class="my-3">
+            <a class="pl-4 h5 text-white" routerLink="addproduct"
+              >Add Product</a
+            >
+          </li>
+          <li class="my-3">
+            <a class="pl-4 h5 text-white" routerLink="viewproduct"
+              >View Product</a
+            >
+          </li>
+          <li class="my-3">
+            <a class="pl-4 h5 text-white" routerLink="users">Users</a>
+          </li>
+          <li class="my-3">
+            <a class="pl-4 h5 text-white" routerLink="orderhistory"
+              >User's Orders</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-10 sidebarContent">
+      <div class="adminnav">
+        <p>user</p>
+      </div>
+      <div class="sidebarContent mt-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

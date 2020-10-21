@@ -1,0 +1,61 @@
+<div class="regback">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 py-3">
+        <div class="regimg">
+          <img
+            class="img img-fluid"
+            src="./../../../assets/images/category-22.jpg"
+            alt="img"
+          />
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 py-2">
+        <div class="regform py-5">
+          <h2>Register</h2>
+          <form
+            [formGroup]="registrationForm"
+            (submit)="register(this.registrationForm.value)"
+            class="py-3"
+          >
+            <div class="form-group">
+              <label>Name</label>
+              <input formControlName="name" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input
+                formControlName="email"
+                type="email"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input
+                formControlName="password"
+                type="password"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label>Confirm Password</label>
+              <input
+                formControlName="c_password"
+                type="password"
+                class="form-control"
+              />
+            </div>
+            <label>Admin</label>
+            <input
+              class="mx-3 chec"
+              type="checkbox"
+              formControlName="isAdmin"
+            />
+            <button class="btn btn-warning" type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

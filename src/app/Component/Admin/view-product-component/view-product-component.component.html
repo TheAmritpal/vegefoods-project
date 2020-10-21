@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <h1 class="text-center my-3">View Products</h1>
+  <table class="table">
+    <thead>
+      <th>Sr.No</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prod of product; let i = index">
+        <td>{{ 1 + i }}</td>
+        <td>{{ prod.product }}</td>
+        <td>{{ prod.price }}</td>
+        <td>{{ prod.categoryid }}</td>
+        <td>{{ prod.description }}</td>
+        <td>
+          <img
+            height="150"
+            width="150"
+            class="img img-fluid"
+            src="http://localhost/amrit/laravel/laravelapi/public/uploads/{{
+              prod.image
+            }}"
+            alt="image"
+          />
+        </td>
+        <td>
+          <button class="btn btn-warning mr-1" routerLink="{{ prod.id }}">
+            Edit
+          </button>
+          <button class="btn btn-danger" (click)="delete(prod.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+  <h1 class="text-center my-3">View Category</h1>
+  <table class="table">
+    <thead>
+      <th>Sr No</th>
+      <th>Category Name</th>
+      <th>Category Image</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cate of category; let i = index">
+        <td>{{ 1 + i }}</td>
+        <td>{{ cate.categoryname }}</td>
+        <td>
+          <img
+            class="img img-fluid"
+            height="150"
+            width="150"
+            src="http://localhost/amrit/laravel/laravelapi/public/uploads/{{
+              cate.image
+            }}"
+            alt="image"
+          />
+        </td>
+        <td>
+          <a
+            type="button"
+            class="btn btn-warning mr-1"
+            routerLink="{{ cate.id }}"
+            >Edit</a
+          >
+          <button class="btn btn-danger" (click)="delete(cate.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

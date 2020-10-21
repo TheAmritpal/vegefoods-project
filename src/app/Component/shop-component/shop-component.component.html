@@ -1,0 +1,147 @@
+<section class="section1">
+  <div
+    class="bgimg d-table"
+    style="background-image: url(../../assets/images/bg_1.jpg)"
+  >
+    <div
+      class="bgimgtext d-table-cell align-middle text-center pt-5"
+      data-aos="fade-up"
+      data-aos-duration="700"
+    >
+      <p class="breadcrumbs text-uppercase bread">
+        <span><a routerLink="/home">Home </a> </span> <span>Shop</span>
+      </p>
+      <h3 class="font-weight-bold">SHOP</h3>
+    </div>
+  </div>
+</section>
+<section class="content3 my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-lg-6 order-lg-last text-center">
+            <div
+              class="vegeimg d-flex justify-content-center pt-4"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div class="vegetext">
+                <h2>Vegetables</h2>
+                <p class="text-muted my-3">Protect the health of every home</p>
+                <button class="btn" (click)="nav()" type="button">
+                  Shop now
+                </button>
+              </div>
+              <img
+                class="img-fluid"
+                src="../../assets/images/category.jpg"
+                alt="img"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div
+              class="leftimg d-flex align-items-top"
+              data-aos="fade-up"
+              data-aos-duration="700"
+            >
+              <img
+                class="img-fluid"
+                src="../../assets/images/category-1.jpg"
+                alt="img"
+              />
+              <div class="innertext">
+                <a routerLink="category/1" class="btn" type="button"
+                  >Vegetables</a
+                >
+              </div>
+            </div>
+            <div
+              class="leftimg leftbot d-flex align-items-end mt-3"
+              data-aos="fade-up"
+              data-aos-duration="700"
+            >
+              <img
+                class="img-fluid"
+                src="../../assets/images/category-2.jpg"
+                alt="img"
+              />
+              <div class="innertext">
+                <a routerLink="category/2" class="btn" type="button">Fruits</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div
+          class="rightimg d-flex align-items-top"
+          data-aos="fade-up"
+          data-aos-duration="1300"
+        >
+          <img
+            class="img-fluid"
+            src="../../assets/images/category-3.jpg"
+            alt="img"
+          />
+          <div class="rightinnertext">
+            <a routerLink="category/3" class="btn" type="button">Juices</a>
+          </div>
+        </div>
+        <div
+          class="rightimg d-flex align-items-end mt-3"
+          data-aos="fade-up"
+          data-aos-duration="1300"
+        >
+          <img
+            class="img-fluid"
+            src="../../assets/images/category-4.jpg"
+            alt="img"
+          />
+          <div class="rightinnertext">
+            <a routerLink="category/4" class="btn" type="button">Dried</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let cate of category | slice: 4" class="col-lg-4 my-3">
+        <div class="rightimg" data-aos="fade-up" data-aos-duration="1300">
+          <img
+            class="img-fluid"
+            src="http://localhost/amrit/laravel/laravelapi/public/uploads/{{
+              cate.image
+            }}"
+            alt="img"
+          />
+          <div class="rightinnertext">
+            <a routerLink="category/{{ cate.id }}" class="btn" type="button">{{
+              cate.categoryname
+            }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="content5">
+  <div class="container">
+    <div class="row">
+      <div class="col none"></div>
+      <div class="col deal my-5" data-aos="fade-up" data-aos-duration="700">
+        <p class="mt-5 text-capitalize best">best price for you</p>
+        <h1 class="font-weight-bolder">Deal of the day</h1>
+        <p class="text-muted mt-4">
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and Consonantia
+        </p>
+        <a class="d-block spinach mb-3" href="#">Spinach</a>
+        <span class="text-muted">$10 </span
+        ><a class="font-weight-bold" href="#">now $5 only</a>
+        <div class="d-flex timer loader text-black mt-2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer-component></app-footer-component>

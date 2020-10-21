@@ -1,0 +1,85 @@
+<section class="section1">
+  <div
+    class="bgimg d-table"
+    style="background-image: url(../../assets/images/bg_1.jpg)"
+  >
+    <div
+      class="bgimgtext d-table-cell align-middle text-center pt-5"
+      data-aos="fade-up"
+      data-aos-duration="700"
+    >
+      <p class="breadcrumbs text-uppercase bread">
+        <span><a routerLink="/home">Home </a> </span> <span>Products</span>
+      </p>
+      <h3 class="font-weight-bold">Products</h3>
+    </div>
+  </div>
+</section>
+<section class="content11 my-5">
+  <div class="container">
+    <div
+      *ngFor="let prod of product"
+      class="row"
+      data-aos="fade-up"
+      data-aos-duration="500"
+    >
+      <div class="col-md-6 col-sm-12">
+        <img
+          class="img img-fluid"
+          src="http://localhost/amrit/laravel/laravelapi/public/uploads/{{
+            prod.image
+          }}"
+        />
+      </div>
+      <div class="col-md-6 col-sm-12 py-5">
+        <h2>{{ prod.product }}</h2>
+        <h4 class="my-2 text-success">${{ prod.price }}</h4>
+        <p class="my-3">
+          {{ prod.description }}
+        </p>
+        <button (click)="addCart(prod.id)" class="btn btn-dark my-2">
+          Add to Cart
+        </button>
+        <div
+          *ngIf="this.alert == true"
+          class="alert alert-success alert-dismissible fade show w-50"
+          role="alert"
+        >
+          Product Added to Cart!
+          <button
+            (click)="close()"
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="content8 bg-light">
+  <div class="container">
+    <div class="row icopos">
+      <div class="col-lg-6 newsleft my-5">
+        <p class="h4">Subcribe to our Newsletter</p>
+        <p class="text-muted bio">
+          Get e-mail updates about our latest shops and special offers
+        </p>
+      </div>
+      <div class="col-lg-6 formright my-5">
+        <div class="form-group d-flex">
+          <input
+            class="form-control input-lg"
+            type="text"
+            placeholder="   Enter email address"
+          />
+          <input class="btn input2" type="submit" value="Subcribe" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer-component></app-footer-component>

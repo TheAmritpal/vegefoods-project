@@ -1,0 +1,63 @@
+<h1 class="text-center my-3">Add Product</h1>
+<hr />
+<div
+  *ngIf="this.alert == true"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+>
+  Product Added Successfully!
+  <button
+    (click)="close()"
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="addProduct" (submit)="product()">
+  <div class="form-group">
+    <label>Product Title</label>
+    <input
+      class="form-control admininput w-75"
+      formControlName="product"
+      type="text"
+    />
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input
+      class="form-control admininput w-75"
+      formControlName="price"
+      type="text"
+    />
+  </div>
+  <div class="form-group">
+    <label>Category</label>
+    <select class="form-control admininput w-75" formControlName="categoryid">
+      <option *ngFor="let cate of category" value="{{ cate.id }}">
+        {{ cate.categoryname }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input
+      class="form-control admininput w-75"
+      formControlName="description"
+      type="text"
+    />
+  </div>
+  <div class="form-group">
+    <label>Upload Image</label>
+    <input
+      class="admininput"
+      formControlName="image"
+      (change)="imageChange($event)"
+      type="file"
+      id="immg"
+    />
+  </div>
+  <button class="btn btn-dark">Add Product</button>
+</form>

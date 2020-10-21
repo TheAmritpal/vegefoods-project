@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="text-center my-3">Orders</h1>
+  <table class="table">
+    <thead>
+      <th>Sr No.</th>
+      <th>Date/Time</th>
+      <th>User</th>
+      <th>Address</th>
+      <th>Amount</th>
+      <th>Payment</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders; let i = index">
+        <td>{{ 1 + i }}</td>
+        <td>{{ order.created_at }}</td>
+        <td>{{ order.email }}</td>
+        <td>{{ order.address }}</td>
+        <td>${{ order.total }}</td>
+        <td>{{ order.payment }}</td>
+        <td><a routerLink="{{ order.id }}" class="btn btn-warning">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
